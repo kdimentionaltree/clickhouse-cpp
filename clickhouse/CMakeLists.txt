@@ -110,12 +110,13 @@ SET_TARGET_PROPERTIES (clickhouse-cpp-lib
     VERSION ${CLICKHOUSE_CPP_VERSION}
 )
 TARGET_LINK_LIBRARIES (clickhouse-cpp-lib
-    absl::int128
+    absl_int128
     cityhash::cityhash
     lz4::lz4
 )
 TARGET_INCLUDE_DIRECTORIES (clickhouse-cpp-lib
     PUBLIC ${PROJECT_SOURCE_DIR}
+    PUBLIC ../ton/third-party/abseil-cpp/
 )
 
 IF (NOT BUILD_SHARED_LIBS)
